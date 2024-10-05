@@ -4,7 +4,8 @@ import { Button } from "./button";
 import { useNavigate } from "react-router-dom";
 import { loginInfoAtom } from "../../store/user";
 import { useRecoilState } from "recoil";
-import axios from 'axios'; // Ensure Axios is imported
+import axios from 'axios'; 
+import { BACKEND_URL } from "../../urlfile";
 
 export const Login = () => {
     const [loginInfo, setLoginInfo] = useRecoilState(loginInfoAtom);
@@ -19,7 +20,7 @@ export const Login = () => {
         e.preventDefault();
         
         try {
-            const response = await axios.post('http://localhost:3000/api/auth/login', loginInfo, {
+            const response = await axios.post(`${BACKEND_URL}/api/auth/login`, loginInfo, {
                 headers: {
                     'Content-Type': 'application/json',
                 },

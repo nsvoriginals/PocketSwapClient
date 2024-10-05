@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import axios from 'axios';
 import { registrationAtom } from "../../store/user";
+import { BACKEND_URL } from "../../urlfile";
 
 export const Register = () => {
     const [registrationInfo, setRegistrationInfo] = useRecoilState(registrationAtom);
@@ -18,7 +19,7 @@ export const Register = () => {
         e.preventDefault();
         
         try {
-            const response = await axios.post('http://localhost:3000/api/auth/register', registrationInfo, {
+            const response = await axios.post(`${BACKEND_URL}/api/auth/register`, registrationInfo, {
                 headers: {
                     'Content-Type': 'application/json',
                 },
