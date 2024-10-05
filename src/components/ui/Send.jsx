@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import { buttonVariants, Button } from "./button";
 import Modal from "./SendModal";
 
-export const Send = ({ user }) => {
-    const [isModalOpen, setIsModalOpen] = useState(false); // State to control modal visibility
+export const Send = ({ user ,id }) => {
+    const [isModalOpen, setIsModalOpen] = useState(false); 
 
     const openModal = () => {
-        setIsModalOpen(true); // Open the modal
+        setIsModalOpen(true); 
     };
 
     const closeModal = () => {
-        setIsModalOpen(false); // Close the modal
+        setIsModalOpen(false); 
     };
 
     return (
@@ -21,7 +21,7 @@ export const Send = ({ user }) => {
                     Send
                 </Button>
             </div>
-            <Modal isOpen={isModalOpen} onClose={closeModal} /> {/* Render modal based on state */}
+            <Modal name={user} isOpen={isModalOpen} onClose={closeModal} id={id}/> 
         </div>
     );
 };

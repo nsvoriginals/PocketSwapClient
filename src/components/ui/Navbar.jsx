@@ -4,7 +4,14 @@ export const Navbar=()=>{
     
 return <div className="p-5 bg-black text-white">
     <div id="main" className="flex justify-between items-center p-50">
-        <div id="logo" onClick={()=>navigate('/')} className="font-Nue text-2xl"><h1>PocketSwap</h1></div>
+    <div 
+    id="logo" 
+    onClick={() => navigate('/')} 
+    className="font-Nue flex items-center text-2xl cursor-pointer"
+>
+
+    <h1 className="ml-2">PocketSwap</h1>
+</div>
         <div id="navlinks" className="flex justify-center text-white gap-20 items-center font-Nue font-weight: 600;">
             <h4 className="" onClick={()=>navigate('/')}>Home</h4>
             <h4 onClick={()=>navigate('/about')} className="">About</h4>
