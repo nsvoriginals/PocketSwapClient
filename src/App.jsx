@@ -4,25 +4,28 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import {Button} from "./components/ui/button"
 import { Navbar } from './components/ui/Navbar'
-import { Hero } from './components/ui/Hero'
-import { BackgroundGradientAnimation } from './components/ui/BackgroundAnim'
-import { Feature } from './components/ui/Features'
-import { Built } from './components/ui/Builtwith'
-import { Madewith } from './components/ui/Madewith'
+import { Landing } from "./components/ui/Landing";
+import { Login } from './components/ui/Login'
+import { BrowserRouter ,Routes ,Route} from 'react-router-dom'
+import { Register } from './components/ui/Register'
+import { Dashboard } from './pages/dashboard'
+
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    <Navbar title={"PocketSwap"}></Navbar>
-   
-     <Hero>
-    
-     </Hero>
-     <Feature></Feature>
-     <Built></Built>
-     <Madewith></Madewith>
+ <BrowserRouter>
+ <Navbar/>
+ <Routes>
+ <Route path='/' element={<Landing/>}></Route>
+ <Route path='/login' element={<Login/>}></Route>
+ <Route path='/register' element={<Register/>}></Route>
+ <Route path='/about' element={<Dashboard/>}></Route>
+ </Routes>
+
+ </BrowserRouter>
     </>
   )
 }
